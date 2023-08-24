@@ -2,20 +2,23 @@
 using System.Linq.Expressions;
 
 namespace Pipelines.Demo;
-public class Reader<TInput> : IQueryable<TInput>
+public class Reader<TInput> : IEnumerator<TInput>
 {
-    public Type ElementType => typeof(TInput);
+    public TInput Current => throw new NotImplementedException();
 
-    public Expression Expression => throw new NotImplementedException();
+    object IEnumerator.Current => throw new NotImplementedException();
 
-    public IQueryProvider Provider => throw new NotImplementedException();
-
-    public IEnumerator<TInput> GetEnumerator()
+    public void Dispose()
     {
         throw new NotImplementedException();
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
+    public bool MoveNext()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Reset()
     {
         throw new NotImplementedException();
     }

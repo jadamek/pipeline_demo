@@ -9,7 +9,7 @@ public class PipeHead<TInput1, TInput2, TInput3>
 {
     internal PipeHead() { }
 
-    public Body.PipeMid<TInput1, TInput2, TInput3, TOutput> As<TOutput>(Func<IQueryable<TInput1>, IQueryable<TInput2>, IQueryable<TInput3>, IQueryable<TOutput>> transform)
+    public Body.PipeMid<TInput1, TInput2, TInput3, TOutput> As<TOutput>(Func<IEnumerable<TInput1>, IEnumerable<TInput2>, IEnumerable<TInput3>, IQueryable<TOutput>> transform)
     {
         return new Body.PipeMid<TInput1, TInput2, TInput3, TOutput>();
     }

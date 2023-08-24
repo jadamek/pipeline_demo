@@ -14,7 +14,7 @@ public class PipeHead<TInput1, TInput2>
         return new PipeHead<TInput1, TInput2, TInput3>();
     }
 
-    public Body.PipeMid<TInput1, TInput2, TOutput> As<TOutput>(Func<IQueryable<TInput1>, IQueryable<TInput2>, IQueryable<TOutput>> transform)
+    public Body.PipeMid<TInput1, TInput2, TOutput> As<TOutput>(Func<IEnumerable<TInput1>, IEnumerable<TInput2>, IQueryable<TOutput>> transform)
     {
         return new Body.PipeMid<TInput1, TInput2, TOutput>();
     }
